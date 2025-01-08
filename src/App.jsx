@@ -21,6 +21,7 @@ function App() {
     }
   };
 
+  
   console.log(todoList);
 
   // Return the JSX for the App component
