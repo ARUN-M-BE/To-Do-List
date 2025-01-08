@@ -1,11 +1,16 @@
-import React from 'react'; // Required if not using automatic JSX runtime
-import ReactDOM from 'react-dom';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import ErrorBoundary from './ErrorBoundary';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root')
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
+  </BrowserRouter>
 );
