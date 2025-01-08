@@ -1,18 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Todos from './Todos';
 
-function Todolist() {
+function Todolist({todoList}) {
   return (
     
     <div className="container">
-      <div className="todo">
-        <p>task list</p>
-        <div className="actions">
-          <input type="checkbox" />
-          <button>Delete</button>
-        </div>
-      </div>
+      {todoList.map((todo) => {
+        return (<Todos todo={todo} />)
+      })}
     </div>
-  )
+  );
 }
 
 export default Todolist
