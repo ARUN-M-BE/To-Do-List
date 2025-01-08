@@ -1,12 +1,12 @@
 import React from 'react';
 import Todos from './Todos';
 
-function Todolist({todoList}) {
+function Todolist({todoList, handleDelete}) {
   return (
     
     <div className="container">
-      {todoList.map((todo) => {
-        return (<Todos todo={todo} />)
+      {todoList.map((todo, index) => {
+        return (<Todos todo={todo} index={index} handleDelete={handleDelete}/>)
       })}
     </div>
   );

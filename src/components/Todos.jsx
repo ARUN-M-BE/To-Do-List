@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Todos({todo}) {
+function Todos({todo, index, handleDelete}) {
   return (
     <div className="todo">
         <p>{todo}</p>
         <div className="actions">
           <input type="checkbox" />
-          <button>Delete</button>
+          <button onClick={()=>handleDelete(index)}>Delete</button>
         </div>
     </div>
   );

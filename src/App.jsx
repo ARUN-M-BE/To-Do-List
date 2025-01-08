@@ -21,7 +21,12 @@ function App() {
     }
   };
 
-  
+  function handleDelete(todoIndex) {
+    setTodoList((prevTodos) => prevTodos.filter((prevTodos, prevTodosIndex) => {
+      return prevTodosIndex !== todoIndex;
+    })
+    );
+  }
   console.log(todoList);
 
   // Return the JSX for the App component
@@ -33,7 +38,10 @@ function App() {
         writeTodo={handleInputChange}
         addTodo={handleAddTodo}
       />
-      <TodoList todoList={todoList} />
+      <TodoList 
+      todoList={todoList} 
+      handleDelete={handleDelete}
+      />
     </main>
   );
 }
